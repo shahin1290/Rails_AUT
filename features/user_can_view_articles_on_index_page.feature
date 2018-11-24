@@ -16,5 +16,6 @@ Scenario: User see some article headlines if there are some articles in the data
     And I should see "Some really breaking action"
     And I should see "Learn Rails 5"
     And I should see "Build awesome rails applications"
-    And show me the page
+
+    
    
