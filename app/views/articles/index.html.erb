@@ -3,6 +3,7 @@
 <% @articles.each do |article| %>
   <p>Title: <%= link_to article.title, article %></p>
   <p>Content: <%= article.content %></p>
+  <p><%= link_to 'Edit', edit_article_path(article) %></p>
 <% end %>
 
 <%= link_to 'Create Article', new_article_path %>
