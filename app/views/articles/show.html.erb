@@ -1,13 +1,28 @@
-<h1>Show Articles</h1>
-
 <p id="notice"><%= notice %></p>
 
 <div>
-    <h3><%= @article.title %></h3>
-    <h4><%= @article.content %></h4>
+    <h1><%= @article.title %></h1>
+    <p><%= @article.content %></p>
 </div>
 
+<br>
+<hr>
+<em>Comments Count: <%=  @article.comments.count %> </em>
+<br>
+<br>
 
+<% @article.comments.each do |comment| %>
+  <p><%= comment.content %></p>
+  <a href = "#"><%= comment.user_email %></a>
+  <br>
+  <br>
+  <br>
+<% end %>
+</p>
+<br>
+<hr>
+
+<p>LEAVE A COMMENT</p>  
 
 <%= form_for([@article, @article.comments.build]) do |f| %>
     <div>
@@ -20,15 +35,11 @@
       <%= f.text_area :content %>
       <%= f.submit value: "Save" %>
     </div>
-    
-    <% end %>
-
-    <div>
-<%=  @article.comments.count %>
-</div>
-
-<% @article.comments.each do |comment| %>
-  <p>Content: <%= comment.content %></p>
 <% end %>
+
+
+  
+
+
 
 <p><%= link_to "Back", root_path %></p>
