@@ -8,10 +8,13 @@ Feature: User can comment on each article on the page
     And the following articles exists in the databse
     | title                | content                          |
     | Learn Rails 5        | Build awesome rails applications |
+    | user_email           | "Awesome! Go ahead"              |
+   
+    
 
 Scenario: User can comment on each article on the page
-    And I fill in "Email" with "shahin@yahoo.com"
-    And I fill in "Make a comment" with "Awesome! Go ahead"
+    And I fill in "user_email" with "shahin@yahoo.com"
+    And I fill in "content" with "Awesome! Go ahead"
     And I click on "Save"
     Then I should see "Awesome! Go ahead!"
 
