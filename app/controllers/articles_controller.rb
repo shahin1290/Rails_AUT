@@ -15,7 +15,6 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
     if @article.save
     redirect_to root_path, notice: "Article is successfully created."
-    
     else
       render 'new'
     end
@@ -38,9 +37,10 @@ class ArticlesController < ApplicationController
     redirect_to articles_path
   end
 
- 
-  private
+   private
+
   def article_params
     params.require(:article).permit(:title, :content)
   end
+
 end

@@ -6,8 +6,8 @@ Feature: User can comment on each article on the page
  Background:
     Given I visit the site
     And the following articles exists in the databse
-    | title                | content                          |id       |
-    | Learn Rails 5        | Build awesome rails applications |   1     |
+    |     title     |            content               | id |
+    | Learn Rails 5 | Build awesome rails applications |  1 |
 
 Scenario: User can comment on each article on the page
     When I am on the show page
