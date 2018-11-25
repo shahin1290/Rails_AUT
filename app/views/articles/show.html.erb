@@ -5,7 +5,9 @@
     <h4><%= @article.content %></h4>
 </div>
 
-<%= form_with model: ([@article, @article.comments.build]) do |f| %>
+
+
+<%= form_for([@article, @article.comments.build]) do |f| %>
     <div>
       <%= f.label :email %>
       <%= f.text_field :user_email %>
@@ -13,10 +15,18 @@
     
     <div>
       <%= f.label :comment %>
-      <%= f.text_area :comment %>
+      <%= f.text_area :content %>
       <%= f.submit value: "Send comment" %>
     </div>
     
     <% end %>
+
+    <div>
+<%=  @article.comments.count %>
+</div>
+
+<% @article.comments.each do |comment| %>
+  <p>Content: <%= comment.content %></p>
+<% end %>
 
 <p><%= link_to "Back", root_path %></p>
