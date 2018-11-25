@@ -16,3 +16,9 @@ Scenario: User can comment on each article on the page
     And I click on "Save"
     Then I should see "Awesome! Go ahead" 
 
+Scenario: User can comment on each article on the page [Sad Path]
+    When I am on the show page
+    And I fill in "comment_user_email" with "shahinyahoo.com"
+    And I fill in "comment_content" with "Awesome! Go ahead"
+    And I click on "Save"
+    Then I should see "Provide valid email address and Comments can't be blank" 
