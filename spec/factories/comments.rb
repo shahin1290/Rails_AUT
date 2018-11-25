@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :comment do
     user_email { "MyString" }
-    content { "MyText" }
+    comment { "MyText" }
   end
 end
