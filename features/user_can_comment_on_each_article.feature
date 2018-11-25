@@ -6,15 +6,13 @@ Feature: User can comment on each article on the page
  Background:
     Given I visit the site
     And the following articles exists in the databse
-    | title                | content                          |
-    | Learn Rails 5        | Build awesome rails applications |
-    | user_email           | "Awesome! Go ahead"              |
-   
-    
+    | title                | content                          |id       |
+    | Learn Rails 5        | Build awesome rails applications |   1     |
 
 Scenario: User can comment on each article on the page
-    And I fill in "user_email" with "shahin@yahoo.com"
-    And I fill in "content" with "Awesome! Go ahead"
+    When I am on the show page
+    And I fill in "comment_user_email" with "shahin@yahoo.com"
+    And I fill in "comment_content" with "Awesome! Go ahead"
     And I click on "Save"
-    Then I should see "Awesome! Go ahead!"
+    Then I should see "Awesome! Go ahead" 
 

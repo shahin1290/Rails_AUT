@@ -21,5 +21,8 @@ And('show me the page') do
     save_and_open_page
 end
 
-
+When("I am on the show page") do
+    visit '/articles/1'
+end
+  
   
