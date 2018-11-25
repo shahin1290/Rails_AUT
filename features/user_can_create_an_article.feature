@@ -12,9 +12,8 @@ Feature: Create articles
     And I fill in "Content" with "Excited about learning a new framework"
     When I click on "Save articles" 
     Then I should be on index page
-    And I should see "Article was successfully created."
+    And I should see "Article is successfully created."
     And I should see "Learning Rails 5"
-    And I should see "Excited about learning a new framework"
 
   Scenario: Publisher doesn't enter a title for the article [Sad Path]
     When I fill in "Content" with "Excited about learning a new framework"
